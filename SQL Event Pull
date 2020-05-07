@@ -1,7 +1,7 @@
 -- I was asked to modify some SQL to include Extended Event information.
 -- The origin of the rest of this SQL is only known to be from a Splunk TA
 -- Where it came from prior to that is not known to me
--- I only added the [PExtendedEvent] view fields and join
+-- I only added the [EPExtendedEvent] view fields and join
 SELECT
         [EPOEvents].[ReceivedUTC] as [timestamp],
         [EPOEvents].[AutoID],
