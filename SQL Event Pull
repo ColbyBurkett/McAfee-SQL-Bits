@@ -1,4 +1,7 @@
-
+-- I was asked to modify some SQL to include Extended Event information.
+-- The origin of the rest of this SQL is only known to be from a Splunk TA
+-- Where it came from prior to that is not known to me
+-- I only added the [EPExtendedEvent] view fields and join
 SELECT
         [EPOEvents].[ReceivedUTC] as [timestamp],
         [EPOEvents].[AutoID],
@@ -51,12 +54,12 @@ SELECT
         [EPExtendedEvent].[TargetSigner],
 		[EPExtendedEvent].[BladeName],
 		[EPExtendedEvent].[AnalyzerContentCreationDate],
-        [EPExtendedEvent].[AnalyzerContentVersion],
+		[EPExtendedEvent].[AnalyzerContentVersion],
 		[EPExtendedEvent].[AnalyzerRuleID],
-        [EPExtendedEvent].[AnalyzerRuleName],
+		[EPExtendedEvent].[AnalyzerRuleName],
 		[EPExtendedEvent].[FirstActionStatus],
 		[EPExtendedEvent].[SecondActionStatus],
-        [EPExtendedEvent].[AttackVectorType]
+		[EPExtendedEvent].[AttackVectorType]
 FROM [EPOEvents]
 LEFT JOIN [EPOLeafNode] ON [EPOEvents].[AgentGUID] = [EPOLeafNode].[AgentGUID]
 LEFT JOIN [EPOProdPropsView_VIRUSCAN] ON [EPOLeafNode].[AutoID] = [EPOProdPropsView_VIRUSCAN].[LeafNodeID]
