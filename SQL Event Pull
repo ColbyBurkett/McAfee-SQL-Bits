@@ -52,14 +52,14 @@ SELECT
         [EPExtendedEvent].[TargetHash],
         [EPExtendedEvent].[TargetSigned],
         [EPExtendedEvent].[TargetSigner],
-		[EPExtendedEvent].[BladeName],
-		[EPExtendedEvent].[AnalyzerContentCreationDate],
-		[EPExtendedEvent].[AnalyzerContentVersion],
-		[EPExtendedEvent].[AnalyzerRuleID],
-		[EPExtendedEvent].[AnalyzerRuleName],
-		[EPExtendedEvent].[FirstActionStatus],
-		[EPExtendedEvent].[SecondActionStatus],
-		[EPExtendedEvent].[AttackVectorType]
+        [EPExtendedEvent].[BladeName],
+        [EPExtendedEvent].[AnalyzerContentCreationDate],
+        [EPExtendedEvent].[AnalyzerContentVersion],
+        [EPExtendedEvent].[AnalyzerRuleID],
+        [EPExtendedEvent].[AnalyzerRuleName],
+        [EPExtendedEvent].[FirstActionStatus],
+        [EPExtendedEvent].[SecondActionStatus],
+        [EPExtendedEvent].[AttackVectorType]
 FROM [EPOEvents]
 LEFT JOIN [EPOLeafNode] ON [EPOEvents].[AgentGUID] = [EPOLeafNode].[AgentGUID]
 LEFT JOIN [EPOProdPropsView_VIRUSCAN] ON [EPOLeafNode].[AutoID] = [EPOProdPropsView_VIRUSCAN].[LeafNodeID]
